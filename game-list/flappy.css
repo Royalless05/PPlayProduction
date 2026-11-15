@@ -1,0 +1,98 @@
+/* =========================================================
+   Flappy Bird — di-scope ke #flappyGame agar tidak
+   berefek ke header/nav website (home.css)
+   ========================================================= */
+
+#flappyGame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 720px; /* tinggi hero lama (img height: 720px) */
+}
+
+#flappyGame canvas {
+  display: block;
+  width: auto;
+  height: 100%;              /* setinggi hero, lebar mengikuti rasio 400x600 */
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* Layout overlay persis seperti versi berdiri sendiri */
+#flappyGame .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(10, 20, 35, 0.55);
+  backdrop-filter: blur(3px);
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Override gaya global (reset + home.css) agar tampilan sama
+   dengan game versi berdiri sendiri */
+#flappyGame .overlay h1 {
+  font-size: 38px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  line-height: normal;
+  margin: 0;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+#flappyGame .overlay p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+#flappyGame .score-big {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+#flappyGame .medal {
+  font-size: 44px;
+}
+
+#flappyGame .new-best {
+  color: #ffd93b;
+  font-weight: 700;
+}
+
+#flappyGame button {
+  padding: 12px 34px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a2a4a;
+  background: linear-gradient(180deg, #ffd86b, #ffb347);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #c77f1e, 0 10px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.08s;
+}
+
+#flappyGame button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #c77f1e;
+}
+
+#flappyGame .hint {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+#flappyGame .hidden {
+  display: none !important;
+}
